@@ -5,16 +5,16 @@ $(document).ready(function () {
   $playBtn = $('#audio-play');
   $pauseayBtn = $('#audio-pause');
   $audioControl = $('[data-type="audio-control"');
+  audio.volume = .1;
 
-  // audio.play();
-
-  setTimeout(initAudioPlayer, 800);
+  setTimeout(initAudioPlayer, 1000);
 
   function initAudioPlayer() {
     $pauseayBtn.parent().show();
+    $playBtn.parent().hide();
     audio.loop = true;
     audio.play();
-    audio.volume = .1;
+
 
     $audioControl.click(function () {
       if (audio.paused) {
