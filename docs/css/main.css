@@ -1,18 +1,45 @@
+:root {
+	--bg-color: #c7bbbb;
+  --bg-gradient: #add0e0;
+  --bg-accent-gradient-from: #e7e7e7;
+  --bg-accent-gradient-to: #1a1a1a;
+
+  --accent-color: #000;
+	--text-color: #3a59a3;
+
+  --gradient-point: .01%;
+  --gradient: repeating-linear-gradient(to left, var(--bg-gradient) 0 1px, transparent 3px 2px),
+              repeating-linear-gradient(to bottom, var(--bg-gradient) 0 1px, transparent 3px 2px),
+              linear-gradient(var(--bg-accent-gradient-from) var(--gradient-point), var(--bg-accent-gradient-to));
+  --gredient-to-bottom: linear-gradient(
+                        to bottom,
+                      rgb(0 0 0 / 1),
+                      rgb(0 0 0 / 0.9) 10%,
+                      rgb(0 0 0 / 0) 40%,
+                      rgb(0 0 0 / 0) 100%
+                      );
+}
+
 html,
 body {
-	height: 100%;
+	min-height: 100%;
 }
 
 body {
+	color: #000000;
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-weight: 400;
-	color: #000000;
-	background-color: #424242;
+	background-color: #868383;
 
-	background: #F8D353;
+	/* background: #F8D353;
 	background: -webkit-linear-gradient(top left, #F8D353, #FF5C5A);
 	background: -moz-linear-gradient(top left, #F8D353, #FF5C5A);
-	background: linear-gradient(top left, #F8D353, #FF5C5A);
+	background: linear-gradient(top left, #F8D353, #FF5C5A); */
+
+	background-image: var(--gradient);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 
 /*	background: #B0D09C;
 	background: -webkit-linear-gradient(top left, #B0D09C, #4B8244);
@@ -31,34 +58,38 @@ body {
 }
 
 img {
+	display: block;
 	max-width: 100%;
 	height: auto;
-	display: block;
+	max-height: 350px;
 }
 
 .wrapper {
 	max-width: 1170px;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
 	text-align: center;
-	padding-top: 50px;
+	/* padding-top: 50px; */
 }
 
 .name {
-	font-size: 58px;
-	font-weight: 400;
 	margin: 0;
-	line-height: 1.5;
+	color: var(--text-color);
 	font-family: 'Oranienbaum', cursive;
-	color: #fff;
+	font-weight: 400;
+	font-size: 58px;
+	line-height: 1.5;
+	/* color: #fff; */
 }
 
 .title {
-	font-size: 36px;
-	font-weight: 400;
 	margin: 0;
+	color: var(--text-color);
+	font-weight: 400;
+	font-size: 36px;
 	line-height: 1.5;
-	color: #fff;
+	/* color: #fff; */
 }
 
 .hidden {
@@ -66,15 +97,18 @@ img {
 }
 
 .copyright {
-	opacity: .5;
+	margin-bottom: 10px;
+	opacity: .8;
 } 
 
 .copyright p {
+	/* color: var(--accent-color); */
+	color: var(--accent-color);
+	font-weight: 600;
 	font-size: 18px;
-	color: #FFF;
 }
 
 .copyright a {
-	color: #FFF;
+	color: var(--text-color);
 	text-decoration: underline;
 }
